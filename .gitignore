@@ -1,0 +1,5 @@
+#ignore env.js
+env.js
+
+#ingnore build files
+build/
