@@ -4,11 +4,12 @@ const UrlShortener = () => {
 
     const [originalUrl, setOriginalUrl] = useState('');
     const [smallUrl, setSmallUrl] = useState('');
+    const baseURL = import.meta.env.VITE_API_BASE_URL;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch('http://localhost:8000/api/shorten', {
+            const res = await fetch(`${baseURL}/api/shorten`, {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"

@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import Url from './models/Url.js';
 import { nanoid } from 'nanoid';
-import { PORT, DB_URI } from './config/env.js'; // Ensure these are loaded properly
+import { PORT, DB_URI, NODE_ENV } from './config/env.js'; // Ensure these are loaded properly
 
 const app = express();
 
@@ -65,6 +65,6 @@ const connectToDatabase = async () => {
 
 // Start the server
 app.listen(PORT, async () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+    console.log(`Server is running at http://localhost:${PORT} in ${NODE_ENV}`);
     await connectToDatabase();
 });
